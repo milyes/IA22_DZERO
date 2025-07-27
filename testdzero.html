@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>IA22_DZERO – Console IA Modulaire</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0c1022;
+      color: #e2e2e2;
+      margin: 0;
+      padding: 20px;
+    }
+    header, footer {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0;
+    }
+    a {
+      color: #00ffff;
+      text-decoration: none;
+    }
+    button {
+      background-color: #1c2338;
+      color: #fff;
+      border: 1px solid #444;
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+    }
+    textarea {
+      width: 100%;
+      height: 120px;
+      background: #1c2338;
+      color: #fff;
+      border: 1px solid #444;
+      padding: 10px;
+      font-size: 1em;
+      margin-top: 10px;
+    }
+    #resultat {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #00ff99;
+    }
+  </style>
+  <script>
+    function analyserTexte() {
+      const texte = document.getElementById("texteInput").value;
+      const resultat = document.getElementById("resultat");
+      if (!texte.trim()) {
+        resultat.innerHTML = "⛔️ Aucun texte fourni.";
+        return;
+      }
+      const probabilite = Math.floor(Math.random() * 100);
+      resultat.innerHTML = `✅ Taux de probabilité IA détecté : <strong>${probabilite}%</strong>`;
+    }
+
+    function activerModule(nom) {
+      alert(`Module ${nom.toUpperCase()} activé ! (Simulation)`);
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>🧠 IA22_DZERO</h1>
+    <p>Plateforme IA cognitive, médicale et sécurisée – Par Zoubirou M. Ilyes</p>
+    <a href="https://orcid.org/0009-0007-7571-3178" target="_blank">ORCID Officiel</a>
+  </header>
+
+  <section id="modules">
+    <h2>🔎 Modules IA disponibles</h2>
+    <button onclick="activerModule('dzero')">🧪 IA Detector</button>
+    <button onclick="activerModule('medical')">🩺 IA Médicale</button>
+    <button onclick="activerModule('game')">🎮 IA Game</button>
+  </section>
+
+  <section id="demo">
+    <h2>🧪 Analyse IA</h2>
+    <textarea id="texteInput" placeholder="Coller un texte ici pour l’analyser…"></textarea>
+    <button onclick="analyserTexte()">Lancer l’analyse IA22_DZERO</button>
+    <div id="resultat"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 – IA22 OS par Ilyes | GitHub : <a href="https://github.com/milyes" target="_blank">milyes</a></p>
+  </footer>
+</body>
+</html>
