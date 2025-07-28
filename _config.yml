@@ -1,0 +1,6 @@
+title: IA22 DZERO
+description: Simulateur d’intelligence artificielle et OCR
+theme: minima
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
