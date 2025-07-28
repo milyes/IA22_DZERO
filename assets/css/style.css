@@ -1,0 +1,14 @@
+body {
+  background-image: url('/assets/img/stars-bg.jpg');
+  background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+}
+
+a {
+  color: #00d4ff;
+}
+
+h1, h2, h3 {
+  color: #ff6dfb;
+}
