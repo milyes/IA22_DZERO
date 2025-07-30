@@ -1,20 +1,14 @@
 body {
-  background: linear-gradient(to bottom, #000428, #004e92);
-  color: #fff;
-  font-family: 'Orbitron', sans-serif;
-  text-align: center;
-  padding: 20px;
+  background-image: url('/assets/img/stars-bg.jpg');
+  background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
 }
 
-input, button {
-  padding: 10px;
-  margin: 10px;
-  font-size: 1em;
+a {
+  color: #00d4ff;
 }
 
-#output {
-  margin-top: 20px;
-  background-color: rgba(255,255,255,0.1);
-  padding: 20px;
-  border-radius: 8px;
+h1, h2, h3 {
+  color: #ff6dfb;
 }
