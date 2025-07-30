@@ -1,142 +1,143 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IA22_DZERO - Console IA cognitive</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IA22_DZERO • Console IA</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #0f0f19, #1f1f29);
+      background: #0c111b;
       color: #e0e0e0;
     }
     header {
       text-align: center;
-      padding: 40px 20px;
+      padding: 30px;
       background: #00ffc2;
       color: #000;
     }
-    header h1 {
-      font-size: 2.8em;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2em;
-    }
+    header h1 { font-size: 2.5em; }
     nav {
       display: flex;
       justify-content: center;
-      gap: 20px;
-      padding: 20px;
-      background: #101820;
+      padding: 15px;
+      gap: 10px;
+      background: #111;
     }
-    nav button {
-      background: #00aac0;
-      border: none;
-      color: #fff;
-      padding: 12px 20px;
+    select, button {
+      padding: 10px 15px;
       border-radius: 6px;
+      border: none;
       font-weight: bold;
       cursor: pointer;
-      transition: background 0.3s ease;
     }
-    nav button:hover {
-      background: #00ffcc;
-      color: #000;
+    select { background: #222; color: #fff; }
+    button {
+      background: #00aac0;
+      color: #fff;
     }
-    .output-zone {
-      max-width: 700px;
+    button:hover { background: #00ffcc; color: #000; }
+    .console-style {
+      background: #0a0a0a;
+      color: #38f38f;
+      font-family: 'Courier New', monospace;
       margin: 20px auto;
-      background: #222;
       padding: 20px;
+      max-width: 700px;
       border-radius: 8px;
-      border: 1px solid #00ffc2;
-    }
-    h2 {
-      text-align: center;
-      color: #00ffc2;
-    }
-    .module-links ul {
-      list-style: none;
-      padding: 0;
-    }
-    .module-links li {
-      margin: 8px 0;
-    }
-    .module-links a {
-      color: #00aac0;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .module-links a:hover {
-      text-decoration: underline;
-      color: #00ffcc;
+      box-shadow: 0 0 10px #38f38f;
+      white-space: pre-line;
     }
     footer {
       text-align: center;
-      padding: 30px 10px;
-      font-size: 0.9em;
-      background: #0a0f13;
+      padding: 20px;
+      background: #000;
+      font-size: 0.8em;
       color: #aaa;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>IA22_DZERO</h1>
-    <p>Interface cognitive adaptative par Ilyes • Modules IA & Bonus intégrés</p>
-  </header>
+<header>
+  <h1>IA22_DZERO</h1>
+  <p>Centre cognitif multi-version IA • by Ilyes</p>
+</header>
 
-  <nav>
-    <button onclick="ouvrirModule()">🗂️ Ouvrir Module</button>
-    <button onclick="listerModules()">📋 Lister Modules</button>
-  </nav>
+<nav>
+  <select id="select-version" onchange="changerVersionIA()">
+    <option value="">-- Sélectionner version IA --</option>
+    <option value="v1.0">v1.0 – IA publique</option>
+    <option value="v2.0">v2.0 – Modules IA</option>
+    <option value="v3.0">v3.0 – CareerPilot Fusion</option>
+    <option value="v4.0">v4.0 – Milyes-Core</option>
+    <option value="v5.0">v5.0 – Sécurité IA</option>
+  </select>
+  <button onclick="parlerIA()">🗣️ Voix IA</button>
+</nav>
 
-  <div id="ia22-output" class="output-zone">
-    <h2>🔎 Interface IA</h2>
-    <p>Utilisez le menu ci-dessus pour interagir avec les modules IA.</p>
-  </div>
+<div id="console-output" class="console-style">
+  [IA22_DZERO SYSTEM]  
+  > Console IA active  
+  > Sélectionnez une version pour démarrer...
+</div>
 
-  <section class="module-links">
-    <h2>🔗 Modules IA disponibles</h2>
-    <ul>
-      <li><a href="ia_edu_module.html">🧑‍🏫 IA_EduTrack – Éducation adaptative</a></li>
-      <li><a href="ia_needs_module.html">🧠 IA_Needs – Analyse des besoins</a></li>
-      <li><a href="ia_bonus_demo.html">🎰 IA_BonusSim – Simulateur bonus démo</a></li>
-      <li><a href="medicaltracker.html">🩺 MedicalTrackerPro – Santé prédictive</a></li>
-      <li><a href="dzero_detector.html">🛡️ DZERO Detector – Sécurité IA</a></li>
-      <li><a href="game_engine_ia.html">🎮 IA Game Engine – Simulations interactives</a></li>
-    </ul>
-  </section>
+<footer>
+  &copy; 2025 Ilyes • IA22_DZERO • Système cognitif IA multivers
+</footer>
 
-  <footer>
-    &copy; 2025 Ilyes • IA22_DZERO • Tous droits réservés • Version responsive
-  </footer>
-
-  <script>
-    function ouvrirModule() {
-      document.getElementById("ia22-output").innerHTML = `
-        <h2>🔓 Module IA activé</h2>
-        <p>Le module sélectionné est maintenant opérationnel. Accès aux fonctions cognitives autorisé.</p>
-      `;
+<script>
+  function afficherConsoleIA(version) {
+    let message = "";
+    switch (version) {
+      case "v1.0":
+        message = "[IA22_DZERO SYSTEM]\n> Version IA : v1.0 • Public\n> Activation du module stable...";
+        break;
+      case "v2.0":
+        message = "[IA22_DZERO SYSTEM]\n> Version IA : v2.0 • Modules IA\n> Chargement de IA_EduTrack, IA_BonusSim...";
+        break;
+      case "v3.0":
+        message = "[IA22_DZERO SYSTEM]\n> Version IA : v3.0 • CareerPilot Fusion\n> IA cognitive d'orientation professionnelle activée...";
+        break;
+      case "v4.0":
+        message = "[IA22_DZERO SYSTEM]\n> Version IA : v4.0 • Milyes-Core\n> Dialogue avancé, adaptation IA en cours...";
+        break;
+      case "v5.0":
+        message = "[IA22_DZERO SYSTEM]\n> Version IA : v5.0 • Sécurité\n> DZERO scan initialisé, surveillance active...";
+        break;
+      default:
+        message = "[IA22_DZERO SYSTEM]\n> Version IA inconnue\n> Impossible d’activer le module.";
     }
+    document.getElementById("console-output").textContent = message;
+  }
 
-    function listerModules() {
-      document.getElementById("ia22-output").innerHTML = `
-        <h2>📚 Liste des modules IA</h2>
-        <ul>
-          <li>IA_EduTrack – Apprentissage adaptatif</li>
-          <li>IA_Needs – Détection des besoins utilisateur</li>
-          <li>IA_BonusSim – Bonus démo gratuits</li>
-          <li>MedicalTrackerPro – Analyse vitale</li>
-          <li>DZERO Detector – Sécurité IA</li>
-          <li>IA Game Engine – Simulation cognitive</li>
-        </ul>
-      `;
+  function changerVersionIA() {
+    const version = document.getElementById("select-version").value;
+    if (version) {
+      afficherConsoleIA(version);
+      lastVersion = version;
     }
-  </script>
+  }
+
+  // Synthèse vocale IA
+  let lastVersion = "";
+  function parlerIA() {
+    let text = "";
+    switch (lastVersion) {
+      case "v1.0": text = "Activation du module IA publique."; break;
+      case "v2.0": text = "Modules IA éducatifs et bonus démo chargés."; break;
+      case "v3.0": text = "Fusion CareerPilot IA en cours."; break;
+      case "v4.0": text = "Chargement du noyau Milyes-Core."; break;
+      case "v5.0": text = "DZERO security activé, scan intelligent."; break;
+      default: text = "Aucune version sélectionnée.";
+    }
+    const synth = window.speechSynthesis;
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = "fr-FR";
+    synth.speak(utter);
+  }
+</script>
 
 </body>
 </html>
