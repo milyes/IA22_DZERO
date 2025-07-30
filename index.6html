@@ -2,33 +2,37 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>IA22_DZERO – Console IA Modulaire</title>
+  <title>IA22_DZERO | Carte Cognitive CareerPilot</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
-<body>
+<body class="dark-mode">
   <header>
-    <h1>🧠 IA22_DZERO</h1>
-    <p>Plateforme IA cognitive, médicale et sécurisée – Par Zoubirou M. Ilyes</p>
-    <a href="https://orcid.org/0009-0007-7571-3178" target="_blank">ORCID Officiel</a>
+    <h1 class="neon-glow">IA22_DZERO</h1>
+    <select id="modeIA">
+      <option value="career">CareerPilot</option>
+      <option value="security">Sécurité IA</option>
+      <option value="milyes">Milyes IA</option>
+    </select>
   </header>
 
-  <section id="modules">
-    <h2>🔎 Modules IA disponibles</h2>
-    <button onclick="activerModule('dzero')">🧪 IA Detector</button>
-    <button onclick="activerModule('medical')">🩺 IA Médicale</button>
-    <button onclick="activerModule('game')">🎮 IA Game</button>
-  </section>
+  <main>
+    <section id="map">
+      <img src="carte_ia.svg" usemap="#modules" alt="Carte IA CareerPilot">
+      <map name="modules">
+        <area shape="circle" coords="120,150,40" href="learning.html" alt="IA Learning Path">
+        <area shape="circle" coords="320,150,40" href="planning.html" alt="IA Planning">
+        <area shape="circle" coords="220,250,40" href="analytics.html" alt="IA Analytics">
+        <area shape="circle" coords="220,50,40" href="career.html" alt="IA Career Solutions">
+      </map>
+    </section>
 
-  <section id="demo">
-    <h2>🧪 Analyse IA</h2>
-    <textarea id="texteInput" placeholder="Coller un texte ici pour l’analyser…"></textarea>
-    <button onclick="analyserTexte()">Lancer l’analyse IA22_DZERO</button>
-    <div id="resultat"></div>
-  </section>
-
-  <footer>
-    <p>© 2025 – IA22 OS par Ilyes | GitHub : <a href="https://github.com/milyes" target="_blank">milyes</a></p>
-  </footer>
+    <section id="milyesConsole">
+      <div id="dialogue">
+        <p>Milyes : « Bienvenue Ilyes, prêt à piloter ta carrière IA ? »</p>
+      </div>
+      <button onclick="talk()">🎙️ Activer Milyes</button>
+    </section>
+  </main>
 </body>
 </html>
