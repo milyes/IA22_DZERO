@@ -2,102 +2,141 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Milyes — IA CareerPilot DZERO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IA22_DZERO - Console IA cognitive</title>
   <style>
     body {
       margin: 0;
-      background: radial-gradient(circle at center, #0a0f1a, #000);
       font-family: 'Segoe UI', sans-serif;
-      color: #e0fdfd;
+      background: linear-gradient(to right, #0f0f19, #1f1f29);
+      color: #e0e0e0;
     }
     header {
       text-align: center;
       padding: 40px 20px;
-      background: linear-gradient(to right, #00ffd0, #004466);
+      background: #00ffc2;
       color: #000;
     }
     header h1 {
-      font-size: 2.5em;
-      text-shadow: 0 0 10px #00fff0;
-    }
-    section {
-      padding: 30px 20px;
-      border-bottom: 1px solid #00ffd0;
-    }
-    h2 {
-      color: #00ffd0;
+      font-size: 2.8em;
       margin-bottom: 10px;
     }
-    .module-box {
-      background: #0f1b2a;
-      border: 1px solid #00aa99;
-      border-radius: 8px;
-      padding: 20px;
-      margin: 15px 0;
+    header p {
+      font-size: 1.2em;
     }
-    .responsive-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    nav {
+      display: flex;
+      justify-content: center;
       gap: 20px;
+      padding: 20px;
+      background: #101820;
+    }
+    nav button {
+      background: #00aac0;
+      border: none;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    nav button:hover {
+      background: #00ffcc;
+      color: #000;
+    }
+    .output-zone {
+      max-width: 700px;
+      margin: 20px auto;
+      background: #222;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #00ffc2;
+    }
+    h2 {
+      text-align: center;
+      color: #00ffc2;
+    }
+    .module-links ul {
+      list-style: none;
+      padding: 0;
+    }
+    .module-links li {
+      margin: 8px 0;
+    }
+    .module-links a {
+      color: #00aac0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .module-links a:hover {
+      text-decoration: underline;
+      color: #00ffcc;
     }
     footer {
       text-align: center;
-      padding: 20px;
-      font-size: 0.8em;
+      padding: 30px 10px;
+      font-size: 0.9em;
+      background: #0a0f13;
       color: #aaa;
-      background-color: #060b12;
-    }
-    @media (max-width: 600px) {
-      header h1 { font-size: 2em; }
-      section { padding: 20px 15px; }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Milyes IA — Fusion CareerPilot & IA22_DZERO</h1>
-  <p>Écosystème cognitif adaptatif pour orientation, compétences et modules IA intelligents</p>
-</header>
+  <header>
+    <h1>IA22_DZERO</h1>
+    <p>Interface cognitive adaptative par Ilyes • Modules IA & Bonus intégrés</p>
+  </header>
 
-<section>
-  <h2>🧭 Universal Chat IA</h2>
-  <div class="module-box">
-    Point d’entrée intelligent : tous les modules IA se connectent à Proxy IA pour dialoguer selon ton profil. Compatible mobile / navigateur / hologramme.
+  <nav>
+    <button onclick="ouvrirModule()">🗂️ Ouvrir Module</button>
+    <button onclick="listerModules()">📋 Lister Modules</button>
+  </nav>
+
+  <div id="ia22-output" class="output-zone">
+    <h2>🔎 Interface IA</h2>
+    <p>Utilisez le menu ci-dessus pour interagir avec les modules IA.</p>
   </div>
-</section>
 
-<section>
-  <h2>🎓 Modules CareerPilot IA</h2>
-  <div class="responsive-grid">
-    <div class="module-box">📊 <strong>IA Analytics</strong> : Matching carrière et suggestions évolutives.</div>
-    <div class="module-box">🧠 <strong>IA Advisory</strong> : Coaching et orientation personnalisée.</div>
-    <div class="module-box">🛠️ <strong>Learning Paths</strong> : Parcours de formation cognitive avec IA CONFIG.</div>
-    <div class="module-box">🔁 <strong>Feedback Loop</strong> : IA qui évolue selon tes préférences et progrès.</div>
-  </div>
-</section>
+  <section class="module-links">
+    <h2>🔗 Modules IA disponibles</h2>
+    <ul>
+      <li><a href="ia_edu_module.html">🧑‍🏫 IA_EduTrack – Éducation adaptative</a></li>
+      <li><a href="ia_needs_module.html">🧠 IA_Needs – Analyse des besoins</a></li>
+      <li><a href="ia_bonus_demo.html">🎰 IA_BonusSim – Simulateur bonus démo</a></li>
+      <li><a href="medicaltracker.html">🩺 MedicalTrackerPro – Santé prédictive</a></li>
+      <li><a href="dzero_detector.html">🛡️ DZERO Detector – Sécurité IA</a></li>
+      <li><a href="game_engine_ia.html">🎮 IA Game Engine – Simulations interactives</a></li>
+    </ul>
+  </section>
 
-<section>
-  <h2>🔬 Modules IA22_DZERO</h2>
-  <div class="responsive-grid">
-    <div class="module-box">🧬 MedicalTrackerPro : Analyse vitale IA + suivi prédictif.</div>
-    <div class="module-box">🛡️ DZERO Detector : Sécurité comportementale IA intégrée.</div>
-    <div class="module-box">🎮 IA Game Engine : Exploration professionnelle par simulation cognitive.</div>
-    <div class="module-box">🌐 Web Console IA22 : Interface responsive pour tous les modules IA.</div>
-  </div>
-</section>
+  <footer>
+    &copy; 2025 Ilyes • IA22_DZERO • Tous droits réservés • Version responsive
+  </footer>
 
-<section>
-  <h2>🌌 Ton guide IA : Milyes</h2>
-  <div class="module-box">
-    <strong>Milyes</strong> est ton avatar IA central : chaque module IA le reconnaît et adapte ses réponses à ton style cognitif. Il agit comme guide, écho, et miroir numérique.
-  </div>
-</section>
+  <script>
+    function ouvrirModule() {
+      document.getElementById("ia22-output").innerHTML = `
+        <h2>🔓 Module IA activé</h2>
+        <p>Le module sélectionné est maintenant opérationnel. Accès aux fonctions cognitives autorisé.</p>
+      `;
+    }
 
-<footer>
-  &copy; 2025 Ilyes • IA22_DZERO • CareerPilot IA Fusion • Conçu pour tous les devices 📱🧠💻
-</footer>
+    function listerModules() {
+      document.getElementById("ia22-output").innerHTML = `
+        <h2>📚 Liste des modules IA</h2>
+        <ul>
+          <li>IA_EduTrack – Apprentissage adaptatif</li>
+          <li>IA_Needs – Détection des besoins utilisateur</li>
+          <li>IA_BonusSim – Bonus démo gratuits</li>
+          <li>MedicalTrackerPro – Analyse vitale</li>
+          <li>DZERO Detector – Sécurité IA</li>
+          <li>IA Game Engine – Simulation cognitive</li>
+        </ul>
+      `;
+    }
+  </script>
 
 </body>
 </html>
